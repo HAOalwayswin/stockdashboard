@@ -15,7 +15,7 @@ st.set_page_config(
 # ---2. 사이드바(주식 종목 선택)
 st.sidebar.markdown("## 주식 종목 선택")
 today = datetime.date.today()
-tickers = stock.get_market_ticker_list(market = "ALL", date = today.strftime("%Y%m%d"))
+tickers = stock.get_market_ticker_list(market = "KOSPI", date = today.strftime("%Y%m%d"))
 ticker_names = [stock.get_market_ticker_name(t) for t in tickers]
 ticker_dict = dict(zip(ticker_names, tickers))
 select_name = st.sidebar.selectbox("종목 선택", ticker_names, index = ticker_names.index("삼성전자"))
